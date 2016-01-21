@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <!--include stylesheets if you have (optional)-->
+    <link href="style.css" rel="stylesheet" />
+  <!--
+    include the angular js script file (required) 
+  -->
+    <script src="https://code.angularjs.org/1.4.8/angular.js" data-semver="1.4.8" data-require="angular.js@1.4.8"></script>
+   <!--
+    include your custom scripts depending on your app requirements (required in this example) 
+  -->
+    <script src="script.js"></script>
+  </head>
+  <!--
+   use ng-app directive to ask Angular to watch for changes happening with that particular
+   html section
+   ng-app="HelloWorld" - here HelloWorld is the name of the module we have written in 
+   scripts.js file
+  -->
+  <body ng-app='HelloWorld'>
+  <!--
+    attach a controller to the section
+  -->
+    <div ng-controller='HelloWorldController'>
+  <!--
+    use an expression {{ expression }} to access the properties of the $scope object
+  -->
+    <h1>{{ greetings }}</h1>
+  <!--
+    you can use a filter (in this example we have used => uppercase) to modify the output
+    of the expression
+    a filter is chained to the expression using the pipe=> | operator 
+    the entire expression + filter is written within the Angular markup => {{ }}
+  -->
+      <h2>{{ greetings | uppercase }}</h2>
+    </div>
+  </body>
+
+</html>
